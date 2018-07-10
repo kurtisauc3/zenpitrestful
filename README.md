@@ -5,13 +5,9 @@ A really simple get/post api for mobile device information, built with the [Djan
  The program has a few `requirements.txt`, which are:
 
 ```
-certifi==2018.4.16
-chardet==3.0.4
-Django==2.0.6
-idna==2.7
-pytz==2018.4
-requests==2.19.1
-urllib3==1.23
+Django==2.0.7
+djangorestframework==3.8.2
+pytz==2018.5
 ```
 
 ## Installation
