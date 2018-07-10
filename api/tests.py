@@ -59,8 +59,12 @@ class ViewTestCase(TestCase):
         """Check that you can get devices by device id."""
         device = Device.objects.get()
         response = self.client.get(
-            reverse('details',
-            kwargs={'pk': device.id}), format="json")
+            reverse(
+                'details',
+                kwargs={'pk': device.id}
+            ),
+            format="json",
+        )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertContains(response, device)
