@@ -1,22 +1,21 @@
+'''
+Just the default settings page for a django project. Nothing to see here :)
+'''
+
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# path builder
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's27^j&x(m@j@7o2&jv!251#xpo+^ha)9#43cbmfcfs^-q9ssp$'
+# don't forget to replace this is you're going for production
+SECRET_KEY = 'PUT_YOUR_SECRET_KEY_HERE'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-# Application definition
+# Just using rest_framework and api apps
 
 INSTALLED_APPS = [
     'django.contrib.admin',
