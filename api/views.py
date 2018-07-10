@@ -7,6 +7,12 @@ class CreateView(generics.ListCreateAPIView):
     queryset = DeviceList.objects.all()
     serializer_class = DeviceListSerializer
 
-    def create_it(self, serializer):
+    def perform_create(self, serializer):
         """Save data when creating a device."""
         serializer.save()
+
+class DetailsView(generics.RetrieveAPIView):
+    """A class that handles what the looking at a device looks like."""
+
+    queryset = DeviceList.objects.all()
+    serializer_class = DeviceListSerializer

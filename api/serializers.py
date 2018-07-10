@@ -9,3 +9,4 @@ class DeviceListSerializer(serializers.ModelSerializer):
         model = DeviceList
         fields = ('device_id', 'device_name', 'battery_status', 'longitude', 'latitude', 'timestamp')
         read_only_fields = ('timestamp',)
+        lookup_field = ('device_id')
