@@ -9,6 +9,7 @@ class ModelTestCase(TestCase):
 
     def setup_device(self):
         """Tryna make a phone with a bunch of stuff, yep..."""
+        self.device_id = "007TBP"
         self.device_name = "The Bond Phone"
         self.battery_status = "100"
         self.longitude = "51.509865"
