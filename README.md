@@ -2,7 +2,7 @@
 
 A really simple get/post api for mobile device information, built with the [Django REST framework](http://www.django-rest-framework.org/).
 
- The program has a few `requirements.txt`, which are:
+ The program has a few `requirements.txt`, which you will need to install later (see Installation):
 
 ```
 Django==2.0.7
@@ -25,6 +25,7 @@ If you don't have virtualenv, you will have to install it first. This can be eas
     $ pip install virtualenv
 
 *pip usually doesn't require `sudo`*
+*feel free to name the environment something other than 'env'*
 ### 2. Download
 Grab a copy of the source code and clone it:
 
@@ -44,17 +45,16 @@ You'll need to migrate your database with 2 commands.
 
 Make sure you are still in '/zenpitrestful/'
 
-    $ python manage.py makemigrations
     $ python manage.py migrate
 
 ### Ready to Run
 
     $ python manage.py runserver
 
-See it in action at http://localhost:8000/devicelist.
+See it in action at http://localhost:8000/device.
 
 You can request a single device by adding it's ID to the url like this:
 
-http://localhost:8000/devicelist/1/
+http://localhost:8000/device/1/
 
-IDs are automatically added and incremented by 1, starting at 1.
+IDs are automatically added when to create a device, and incremented by 1, starting at 1.
