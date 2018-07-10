@@ -7,6 +7,6 @@ class DeviceListSerializer(serializers.ModelSerializer):
     class Meta:
         """Meta class to synch up models to serializer."""
         model = DeviceList
-        fields = ('device_id', 'device_name', 'battery_status', 'longitude', 'latitude', 'timestamp')
+        fields = ('id', 'device_name', 'battery_status', 'longitude', 'latitude', 'timestamp')
         read_only_fields = ('timestamp',)
         lookup_field = ('device_id')
