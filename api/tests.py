@@ -1,8 +1,11 @@
 from django.test import TestCase
 from .models import DeviceList
+from rest_framework.test import APIClient
+from rest_framework import status
+from django.core.urlresolvers import reverse
 
 class ModelTestCase(TestCase):
-    """Here lie the tests for DeviceList, may they suceed in their endeavors"""
+    """Here lie the tests for DeviceList models, may they suceed in their endeavors"""
 
     def setup_device(self):
         """Tryna make a phone with a bunch of stuff, yep..."""
@@ -18,3 +21,19 @@ class ModelTestCase(TestCase):
         self.devicelist.save()
         new_count = DeviceList.objects.count()
         self.assertNotEqual(old_count, new_count)
+
+class ViewTestCase(TestCase):
+    """Here lie the tests for DeviceList views, may they suceed in their endeavors"""
+
+    def setup_device(self):
+        """Set up client and some mock data."""
+        self.client = APIClient()
+        self.devicelist_data = {'device_name': 'The Bond Phone'}
+        self.response = self.client.post(
+            reverse('create'),
+            self.devicelist_data,
+            format="json")
+
+    def create_device(self):
+        """Compare it to the http status code."""
+        self.assertEqual(self.response.status_code, status.HTTP_201_CREATED)
